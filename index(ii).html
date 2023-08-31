@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATM</title>
+    <link rel="stylesheet" href="index(ii).css">
+</head>
+<body>
+    <div class="mar">
+        <marquee behavior="" direction="" >
+            <h1 id="mar">THANKS FOR BANKING WITH US</h1>
+        </marquee>
+        </div>
+    <div>
+        <h1 class="heading">GENIUS BANK OF NIGERIA</h1>
+    </div>
+    
+    <div>
+        <h3>Balance</h3>
+        <h2 style="display: inline-block;">$</h2><h2 style="display: inline-block;" id="money">1000</h2>
+    </div>
+
+    <section id="container">
+        <aside class="wrapper">
+            <button class="btn" onclick="withdraw()">Cash Withdrawal</button>
+            <button class="btn"><a href="index(iii).html">Change Card Setting</a></button>
+            <button class="btn"  onclick="withdraw()">Bill Payment</button>
+        </aside>
+        <aside class="wrapper">
+            <button class="btn"  onclick="withdraw()">Transfer</button>
+            <button class="btn" onclick="deposit()">Donation / Other</button>
+            <button class="btn"><a href="index(i).html">Exit</a></button>
+        </aside>
+    </section>
+
+    <div id="con" class="content2">
+        <p id="promt">Kindly input a valid amount</p>
+        <input type="text" placeholder="$" id="inp">
+    </div>
+    <div>
+        <p>©Bentimi Aug 2022</p>
+    </div>
+    <script>
+        function withdraw() {
+            var amount = Number(inp.value);
+            var balance = Number(money.innerText)
+            // var  = Number(money.innerText)
+            if(amount<= balance){
+                var savings = balance - amount;
+                money.innerText = savings
+                alert ("Debit:123xxxx456 Amt: $" + amount + "Bal: $" + savings)
+                promt.innerText = "Transaction Successful"
+            }
+            else if(amount>balance){
+                alert ("Alert:123xxxx456 Sorry, Insufficient Fund!")
+            promt.innerText = "Insufficient Fund!"
+        } 
+        else{
+            alert ("Inalid Input!")
+            promt.innerText = "Check the Input Value Properly"
+        }
+    }
+    function deposit() {
+            var amount = Number(inp.value);
+            var balance = Number(money.innerText)
+                if(savings = balance + amount) {var savings = balance + amount;
+                money.innerText = savings
+                alert ("Credit:123xxxx456 Amt: $" + amount + "Bal: $" + savings)
+                promt.innerText = "Transaction Successful"}
+                else{
+                    alert ("Inalid Input!")
+                promt.innerText = "Check the Input Value Properly"
+        }
+            }
+    </script>
+</body>
+</html>
